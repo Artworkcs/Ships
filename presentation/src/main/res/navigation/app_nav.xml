@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/shipsFragment">
+
+    <fragment
+        android:id="@+id/shipsFragment"
+        android:name="com.agesadev.presentation.ui.ships.ShipsFragment"
+        android:label="Ships"
+        tools:layout="@layout/fragment_ships" >
+        <action
+            android:id="@+id/action_shipsFragment_to_shipsDetailsFragment"
+            app:destination="@id/shipsDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shipsDetailsFragment"
+        android:name="com.agesadev.presentation.ui.shipsdetails.ShipsDetailsFragment"
+        android:label="Ship Detail"
+        tools:layout="@layout/fragment_ships_dertails" >
+        <argument
+            android:name="shipModel"
+            app:argType="com.agesadev.domain.model.Ships"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
